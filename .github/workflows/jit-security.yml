@@ -20,7 +20,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-enrichment-slim:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   remediation-pr:
@@ -33,7 +32,6 @@ jobs:
       with:
         security_control: registry.jit.io/open-remediation-pr-alpine:latest
         security_control_output_file: /opt/code/jit-report/results.json
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         inline_environment: -e GITHUB_TOKEN="${{fromJSON(github.event.inputs.client_payload).payload.github_token}}"
         
@@ -47,7 +45,6 @@ jobs:
       with:
         security_control: registry.jit.io/control-gitleaks-alpine:latest
         security_control_output_file: /tmp/report.json
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-csharp:
@@ -59,7 +56,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-go:
@@ -71,7 +67,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-gosec-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-java:
@@ -83,7 +78,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-js:
@@ -95,7 +89,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-kotlin:
@@ -107,7 +100,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-php:
@@ -119,7 +111,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-python-semgrep:
@@ -131,7 +122,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-rust:
@@ -143,7 +133,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-scala:
@@ -155,7 +144,6 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
   static-code-analysis-swift:
@@ -167,6 +155,5 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
         
